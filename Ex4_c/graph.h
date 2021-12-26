@@ -1,3 +1,4 @@
+#ifndef GRAPH_
 #define GRAPH_
 
 typedef struct GRAPH_NODE_ *pnode;;
@@ -23,4 +24,5 @@ void deleteGraph_cmd(pnode* head);
 void shortsPath_cmd(pnode head);
 void TSP_cmd(pnode head);
 
-// #endif
+#endif
+
