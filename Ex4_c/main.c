@@ -6,7 +6,7 @@ int main(){
     char input = '\0';
     while (scanf("%c", &input) != EOF){
         if (input == 'A'){
-
+            
         }else if (input == 'B'){
         
         }else if (input == 'D'){
