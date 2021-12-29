@@ -17,16 +17,34 @@ void build_graph_cmd(pnode *head){
             currNode.node_num = curr;
             scanf("%d" , &curr);
             while(curr != 'n'&&curr != 'A' && curr != 'B' && curr != 'D' &&curr!='S'&&curr!='T'){
+                // currNode.edges->endpoint = curr;
+                // scanf("%d" , &curr);
+                // currNode.edges->weight = curr;
+                // scanf("%d" , &curr);
+                
                 currNode.next->node_num = curr;
                 scanf("%d" , &curr);
                 currNode.edges->next->weight = curr;
                 scanf("%d" , &curr);
             }
               nodesList[currNode.node_num] = currNode;
-        }
-      
+        } 
     }
+}
+
+void insert_node_cmd(pnode *head){
     
+}
+
+pnode getNode(pnode *head , int id){
+    pnode place = *head;
+    while(place != null){
+        if(place->node_num == id){
+            return place;
+        }
+        place = place->next;
+    }
+    return NULL;
 }
 
 
