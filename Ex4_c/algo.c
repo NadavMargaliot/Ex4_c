@@ -24,6 +24,7 @@ void insert_node_cmd(pnode *head){
     // A 4 n 0 2 5 3 3 n 2 0 4 1 1 n 1 3 7 0 2
     int id = -1;
     scanf("%d", &id);
+    printf("id = %d\n" , id);
     pnode newNode = getNode(head, id);
     if (newNode == NULL){
         newNode = (pnode)malloc(sizeof(node));
@@ -49,6 +50,7 @@ void insert_node_cmd(pnode *head){
     int moreEdges = scanf("%d", &dest);
     // adding edges to the curr node until a letter comes.
     while (moreEdges != 0 && moreEdges != EOF){
+        printf("moreEdges = %d\n" , dest);
         pnode destNode = getNode(head, dest);
         if (destNode == NULL){
             destNode = (pnode)malloc(sizeof(node));
@@ -62,6 +64,7 @@ void insert_node_cmd(pnode *head){
         }
         int weight = -1;
         scanf("%d", &weight);
+        printf("weight = %d\n" , weight);
         *lastEdge = (pedge)malloc(sizeof(edge));
         if ((*lastEdge) == NULL){
             return;
@@ -102,10 +105,26 @@ pnode getNode(pnode *head , int id){
     return NULL;
 }
 void delete_node_cmd(pnode *head){
+    
 
 }
 
 void printGraph_cmd(pnode head){
+    pnode indexN = head;
+    while(indexN != NULL){
+        // Print the curr node id.
+        printf("Node %d:", indexN->node_num);
+        pedge indexE = indexN->edges;
+        // Print all the edges of the curr node.
+        while(indexE != NULL){
+            printf("Dest %d: Weight %d:" , indexE->endpoint->node_num, indexE->weight);
+            // Move on to the next edge.
+            indexE = indexE->next;
+        }
+        printf("\n");
+        // Move on to the next node.
+        indexN = indexN->next;
+    }
 
 }
 
@@ -124,6 +143,7 @@ int main(){
     pnode tmp = NULL;
     pnode *head = &tmp;
     build_graph_cmd(head);
+
 
     return 1;
 }
