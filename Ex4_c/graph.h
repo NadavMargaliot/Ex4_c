@@ -1,29 +1,37 @@
-#ifndef GRAPH_
-#define GRAPH_
+#ifndef EX4_2_GRAPH_H
+#define EX4_2_GRAPH_H
 
-typedef struct GRAPH_NODE_ *pnode;;
-
-typedef struct edge_ {
+typedef struct Node {
+    int id;
     int weight;
-    pnode endpoint;
-    struct edge_ *next;
-} edge, *pedge;
+    int tag;
+    struct Node * next;
+    struct Edge *neighbors;
+    int neighborsSize;
+}Node;
 
+typedef struct Edge{
+    int  weight;
+    int tag;
+    int src;
+    int dest;
+    struct Edge * next;
+}Edge;
 
-typedef struct GRAPH_NODE_ {
-    int node_num;
-    pedge edges;
-    struct GRAPH_NODE_ *next;
-} node, *pnode;
+typedef struct NodeLinkedList {
+    Node *head;
+}NodeLinkedList;
+int addNode(struct NodeLinkedList *q, int id);
+void init_LinkedList( struct NodeLinkedList *l);
+void init_LinkedListbyNumber(struct NodeLinkedList *l,int num);
+struct Node * getNode ( struct NodeLinkedList *l, int id);
+int addEdge(struct NodeLinkedList *q,int src, int dest,int weight);
+struct Edge  * getEdge  ( struct NodeLinkedList *l,int src,int dest);
+struct Edge * getallEdgesOut( struct NodeLinkedList *l,int id);
+void removeEdge(struct NodeLinkedList *l,int src,int dest);
+void removeNode(struct NodeLinkedList *l,int id);
+void reboot_graph(NodeLinkedList *l);
+void print_graph(NodeLinkedList* l);
 
-void build_graph_cmd(pnode *head);
-void insert_node_cmd(pnode *head);
-void delete_node_cmd(pnode *head);
-void printGraph_cmd(pnode head); //for self debug
-void deleteGraph_cmd(pnode* head);
-void shortsPath_cmd(pnode head);
-void TSP_cmd(pnode head);
-pnode getNode(pnode *head , int id);
-void add_edge_to_node(pnode *head);
 
 #endif
