@@ -57,8 +57,8 @@ void init_LinkedListbyNumber(struct NodeLinkedList *l,int num){
 struct Node * getNode ( struct NodeLinkedList *l, int id){
     Node *temp = l->head;
     while(temp != NULL){
-        //need to check if temp!=NULL instead
         if(temp->id == id){
+            // node found
             return temp;
         }
         temp = temp->next;
@@ -95,7 +95,6 @@ int addEdge(struct NodeLinkedList *q,int src, int dest,int weight){
 }
 
 struct Edge  * getEdge  ( struct NodeLinkedList *l,int src,int dest){
-//    Edge * temp = malloc(sizeof(struct Edge));
     struct Node *node = getNode(l,src);
     if(node->neighbors == NULL){
         return NULL;
@@ -130,27 +129,27 @@ struct Edge * getallEdgesOut( struct NodeLinkedList *l,int id){
 
 void removeEdge(struct NodeLinkedList *l,int src,int dest) {
     struct Node *node = getNode(l, src);
-    struct Edge **niber = &node->neighbors;
+    struct Edge **neighbor = &node->neighbors;
     struct Edge *edge = getEdge(l, src, dest);
     struct Edge *temp = node->neighbors;
-    if (niber == NULL || edge == NULL) {
+    if (neighbor == NULL || edge == NULL) {
         return;
     }
     if(temp->dest == dest){
-        *niber = temp->next;
+        *neighbor = temp->next;
         node->neighborsSize--;
         free(temp);
         return;
     }
-    while (*niber != NULL) {
-        if ((*niber)->dest == dest) {
-            *niber = temp->next;
+    while (*neighbor != NULL) {
+        if ((*neighbor)->dest == dest) {
+            *neighbor = temp->next;
             node->neighborsSize--;
             free(temp);
             break;
         }
         temp = temp->next;
-        niber = &((*niber)->next);
+        neighbor = &((*neighbor)->next);
     }
 }
 
