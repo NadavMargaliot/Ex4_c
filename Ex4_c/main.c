@@ -13,7 +13,7 @@ int main() {
     while (ch != -1 && ch != '\n') {
         if (ch == 'A') {
             if (bool) {
-                reboot_graph(&node_list);
+                delete_graph(&node_list);
                 ch = getchar();
                 ch = getchar();
                 init_LinkedListbyNumber(&node_list, ch - 48);
@@ -150,6 +150,6 @@ int main() {
         }
 
     }
-    reboot_graph(&node_list);
+    delete_graph(&node_list);
 
 }

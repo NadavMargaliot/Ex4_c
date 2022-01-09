@@ -161,15 +161,14 @@ void removeNode(struct NodeLinkedList *l,int id) {
     }
     // deleting out edges
     if (node->neighborsSize != 0) {
-        struct Edge **niber = &node->neighbors;
+        struct Edge **neighbor = &node->neighbors;
         struct Edge *temp = node->neighbors;
         while (temp != NULL) {
-            *niber = temp->next;
+            *neighbor = temp->next;
             removeEdge(l, temp->src, temp->dest);
-            temp = *niber;
+            temp = *neighbor;
         }
     }
-    // deleting in edges
     Node* node1 = l->head;
     while (node1!=NULL) {
         Edge* edge1 = node1->neighbors;
@@ -202,7 +201,7 @@ void removeNode(struct NodeLinkedList *l,int id) {
     }
 }
 
-void reboot_graph(NodeLinkedList *l) {
+void delete_graph(NodeLinkedList *l) {
     Node *currNode = l->head;
     while (currNode != NULL) {
         Edge *currEdge = currNode->neighbors;

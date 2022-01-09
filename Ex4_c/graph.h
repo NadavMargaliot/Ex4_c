@@ -30,7 +30,7 @@ struct Edge  * getEdge  ( struct NodeLinkedList *l,int src,int dest);
 struct Edge * getallEdgesOut( struct NodeLinkedList *l,int id);
 void removeEdge(struct NodeLinkedList *l,int src,int dest);
 void removeNode(struct NodeLinkedList *l,int id);
-void reboot_graph(NodeLinkedList *l);
+void delete_graph(NodeLinkedList *l);
 void print_graph(NodeLinkedList* l);
 
 
