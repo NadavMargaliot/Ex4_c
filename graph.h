@@ -1,6 +1,3 @@
-// #ifndef EX4_2_GRAPH_H
-// #define EX4_2_GRAPH_H
-
 typedef struct Node {
     int id;
     int weight;
@@ -32,6 +29,3 @@ void removeEdge(struct NodeLinkedList *l,int src,int dest);
 void removeNode(struct NodeLinkedList *l,int id);
 void delete_graph(NodeLinkedList *l);
 void print_graph(NodeLinkedList* l);
-
-
-// #endif
