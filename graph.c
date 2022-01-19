@@ -1,7 +1,6 @@
 #include "graph.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 int addNode(struct NodeLinkedList *q, int id){
     Node * newnode = malloc(sizeof(struct Node));
     newnode->id = id;
@@ -227,4 +226,3 @@ void print_graph(NodeLinkedList* l) {
         currNode = currNode->next;
     }
 }
-

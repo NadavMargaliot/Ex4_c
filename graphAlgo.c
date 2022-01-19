@@ -1,5 +1,5 @@
 #include "graph.h"
-#include "Graph_Algo.h"
+#include "graphAlgo.h"
 #include <stdio.h>
 #include <limits.h>
 #include "stdlib.h"
@@ -98,4 +98,3 @@ void TSP(struct NodeLinkedList *l,int * arr,int len,int left,int right,int *minP
         }
     }
 }
-

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "graph.h"
-#include "Graph_Algo.h"
+#include "graphAlgo.h"
 #include <stdlib.h>
 #include <limits.h>
 
