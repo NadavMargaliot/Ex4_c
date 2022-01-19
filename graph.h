@@ -1,5 +1,5 @@
-#ifndef EX4_2_GRAPH_H
-#define EX4_2_GRAPH_H
+// #ifndef EX4_2_GRAPH_H
+// #define EX4_2_GRAPH_H
 
 typedef struct Node {
     int id;
@@ -34,4 +34,4 @@ void delete_graph(NodeLinkedList *l);
 void print_graph(NodeLinkedList* l);
 
 
-#endif
+// #endif
